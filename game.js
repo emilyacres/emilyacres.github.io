@@ -73,7 +73,7 @@ Game.prototype.provideHint = function(){
 
 
 
-$(document).on('ready', function(){
+$(document).ready(function(){
 	$('#submitButton').on('click', function(){
 		console.log("clicked");
 	});	
