@@ -42,14 +42,24 @@ Game.prototype.playersGuessSubmission = function(guess){
 
 Game.prototype.checkGuess = function(){
 	if(this.playersGuess === this.winningNumber){
+		$('#hint, #submitButton').prop('disabled', true);
+		$('#subtitle').text('Press the reset button to play again!');
 		return 'You Win!';
 	}else if(this.pastGuesses.indexOf(this.playersGuess) !== -1){
 		return 'You have already guessed that number.';
 	}
 	this.pastGuesses.push(this.playersGuess);
+	$('#guesses li:nth-child('+ this.pastGuesses.length +')').text(this.playersGuess)
 	if(this.pastGuesses.length === 5){
+		$('#hint, #submitButton').prop('disabled', true);
+		$('#subtitle').text("press the reset button to play again!");
 		return 'You Lose.';
 	}
+	if(this.isLower()) {
+        $('#subtitle').text("Guess Higher!")
+    } else {
+        $('#subtitle').text("Guess Lower!")
+    }
 	if(this.difference() < 10){
 		return "You're burning up!";
 	}else if(this.difference() < 25){
@@ -76,7 +86,7 @@ function makeAGuess(game){
 	var guess = $('#userGuess').val();
 	$('#userGuess').val('');
 	var output = game.playersGuessSubmission(parseInt(guess, 10));
-	console.log(output);
+	$('h1').text(output);
 }
 
 $(document).ready(function(){
