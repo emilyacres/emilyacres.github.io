@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Guessing Game</title>
+    <link rel="stylesheet" type='text/css' href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+
+      <div id='app' class='container-fluid'>
+
+        <div id='headers'>
+          <h1 class='center' id >Guess the Number</h1>
+          <h2 class='center' id="subtitle">Enter a number between 1 and 100!<h2>
+        </div>
+
+        <div id='main' class='center'>
+          <div id='input-parent' class='center'>
+              <input type="text" name="userGuess" placeholder="#" maxlength="3" class='center' id='userGuess'>
+              <input type="submit" name="submit" value="Go!" class='center btn' id='submitButton'>
+
+          </div>
+
+          <div id='guesses'>
+            <ul class='center'>
+              <li class='guess'>-</li>
+              <li class='guess'>-</li>
+              <li class='guess'>-</li>
+              <li class='guess'>-</li>
+              <li class='guess'>-</li>
+          </div>
+
+          <div id="menu-btns">
+              <button class='btn bottomBtn' id='hint'>
+                Hint
+              </button>
+              <button class='btn bottomBtn' id='reset'>
+                Reset
+              </button>
+          </div>
+        </div>
+      </div>
+
+
+
+    <div id='footer' class='row container-fluid'>
+        <div>
+          <div class='center footerLogos col-sm-4 col-md-4 col-lg-4'>
+            <img class='img-responsive footerImg' src='FSlogo.png'></img>
+          </div>
+
+          <div class='center footerLogos col-sm-4 col-md-4 col-lg-4'>
+            <h4 id='project'>Project by</h4>
+            <h3 id='name'> Emily Grace</h3>
+          </div>
+
+          <div class='center footerLogos col-sm-4 col-md-4 col-lg-4'>
+            <img class='img-responsive footerImg' src='GHlogo.png'></img>
+          </div>
+
+        </div>
+    </div>
+
+  </body>
+  <script src="jquery-3.2.1.js"></script>
+  <script src='game.js'></script>
+</html>
