@@ -88,7 +88,7 @@ $(document).ready(function(){
 		makeAGuess(game);
 	});	
 
-	$('#userGuess').keyPress(function(event){
+	$('#userGuess').keypress(function(event){
 		if(event.which == 13){
 			makeAGuess(game);
 		}
