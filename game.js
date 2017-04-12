@@ -103,6 +103,20 @@ $(document).ready(function(){
 			makeAGuess(game);
 		}
 	});
+
+	$('#hint').click(function(event){
+		game = newGame();
+		$('h1').text('Play the Guessing Game!');
+    	$('#subtitle').text('Guess a number between 1-100!')
+    	$('.guess').text('-');
+    	$('#hint, #submitButton').prop("disabled",false);
+	});
+
+	$('#hint').click(function() {
+    	var hints = game.provideHint();
+    	$('h1').text('The winning number is '+hints[0]+', '+hints[1]+', or '+hints[2]);
+	});
+
 });
 
 
