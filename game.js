@@ -72,12 +72,28 @@ Game.prototype.provideHint = function(){
 }
 
 
+function makeAGuess(game){
+	var guess = $('#userGuess').val();
+	$('#userGuess').val('');
+	var output = game.playersGuessSubmission(parseInt(guess, 10));
+	console.log(output);
+}
 
 $(document).ready(function(){
-	$('#submitButton').on('click', function(){
-		console.log("clicked");
+
+	var game = new Game;
+
+
+	$('#submitButton').on('click', function(event){
+		makeAGuess(game);
 	});	
-})
+
+	$('#userGuess').keyPress(function(event){
+		if(event.which == 13){
+			makeAGuess(game);
+		}
+	});
+});
 
 
 
