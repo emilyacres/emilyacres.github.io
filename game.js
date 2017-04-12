@@ -104,7 +104,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$('#hint').click(function(event){
+	$('#reset').click(function(event){
 		game = newGame();
 		$('h1').text('Play the Guessing Game!');
     	$('#subtitle').text('Guess a number between 1-100!')
